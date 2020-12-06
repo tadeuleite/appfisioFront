@@ -1,0 +1,27 @@
+<div id="mySidenav" class="sidenav">
+    <h1>Informações da conta</h1>
+    <div class="foto-fisio"></div>
+    <h1>Bem-vindo!</h1>
+    <p>Faça seu login para acessar mais funcionalidades</p>
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a (click)="navegar('cadastro-usuario')">Complete seu cadastro</a>
+    <a (click)="navegar('')">Guias e Tutoriais</a>
+    <a (click)="navegar('')">F.A.Q.</a>
+    <a (click)="navegar('')">Quem Somos Nós</a>
+    <a (click)="navegar('')">Desenvolvedores</a>
+    <a (click)="navegar('')">Ajuda</a>
+    <a (click)="navegar('')">Configurações</a>
+    <a (click)="navegar('')">Política de privacidade</a>
+</div>
+
+<div id="main">
+    <span style="font-size:30px; cursor:pointer; top: 0; position: absolute;" (click)="openNav()">&#9776; </span>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <p class="p-title">FisioTrack</p>
+    <p class="p-subtitle">Content filtering</p>
+    <p class="p-text">Set the content filtering level to restrict apps that can be downloaded</p>
+</footer>

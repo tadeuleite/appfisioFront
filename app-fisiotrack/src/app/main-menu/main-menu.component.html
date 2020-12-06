@@ -1,0 +1,38 @@
+<div id="ocultarLogo" style="text-align: center;">
+    <img style="padding-left: 28px;" src="../assets/fisio-track.png">
+</div>
+<div id="exibirGrid">
+    <ul>
+        <li (click)="toggleModal()">
+            Cadastre pacientes
+        </li>
+        <li (click)="toggleModal()">
+            Condutas inteligentes
+        </li>
+        <li (click)="toggleModal()">
+            Otimize seu tempo
+        </li>
+        <li (click)="toggleModal()">
+            Acesse nossos tutoriais
+        </li>
+        <li (click)="toggleModal()">
+            Quem somos
+        </li>
+    </ul>
+    <div>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div style="text-align: center;">
+                    <img width="60px" src="../assets/warning.svg">
+                </div>
+                <h3 style="text-align: center;">Para ter acesso as funcionalidades do site, é preciso se cadastrar
+                </h3>
+                <div style="text-align: center;">
+                    <button class="btn-ok" type="submit">Quero me cadastrar</button>
+                    <button class="btn-cancel" type="button" (click)="toggleModal()">Não quero me cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
