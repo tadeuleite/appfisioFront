@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-main-menu',
@@ -6,6 +7,19 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
     styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
+    idUser: number;
+    constructor(
+        private route: Router,
+        private activatedRoute: ActivatedRoute
+    ) {
+        if (this.activatedRoute.firstChild) {
+            this.activatedRoute.firstChild.params.subscribe(param => {
+                if (param) {
+                    this.idUser = param.idUser;
+                }
+            });
+        }
+    }
 
     ngOnInit() {
         document.getElementById('exibirGrid').style.display = 'none';
@@ -15,13 +29,21 @@ export class MainMenuComponent implements OnInit {
         }, 1000);
     }
 
-    toggleModal() {
-        const modal = document.querySelector('.modal');
-        const closeButton = document.querySelector('.close-button');
+    navegar() {
+        this.route.navigate(['signup']);
+    }
 
-        closeButton.addEventListener('click', this.toggleModal);
-        window.addEventListener('click', this.windowOnClick);
-        modal.classList.toggle('show-modal');
+    toggleModal(navecagao?) {
+        if (!this.idUser) {
+            const modal = document.querySelector('.modal');
+            const closeButton = document.querySelector('.close-button');
+
+            closeButton.addEventListener('click', this.toggleModal);
+            window.addEventListener('click', this.windowOnClick);
+            modal.classList.toggle('show-modal');
+        } else {
+            this.route.navigate([navecagao, this.idUser]);
+        }
     }
 
     windowOnClick(event) {

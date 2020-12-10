@@ -1,13 +1,13 @@
 <form autocomplete="off">
     <div class="form-structor">
         <div class="signup">
-            <h2 class="form-title" id="signup">Sign up</h2>
+            <h2 class="form-title">Cadastre-se ou Logue-se</h2>
             <div class="form-holder">
-                <input type="text" class="input" placeholder="Name" />
-                <input type="email" class="input" placeholder="Email" />
-                <input type="password" class="input" placeholder="Password" />
+                <input id="email" type="email" class="input" placeholder="Email" />
+                <input id="password" type="password" class="input" placeholder="Password" />
             </div>
-            <button class="submit-btn" type="submit">Sign up</button>
+            <button class="submit-btn" type="button" (click)="cadastrar()">Cadastrar</button>
+            <button class="submit-btn" type="button" (click)="logar()">Logar</button>
         </div>
     </div>
     <div class="login-aviso" id="aviso-login" (click)="fecharAviso()">

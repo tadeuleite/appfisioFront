@@ -1,0 +1,20 @@
+<div>
+    <div class="form-structor">
+        <div class="signup">
+            <form autocomplete="off">
+                <h2 class="form-title">Cadastrar um paciente</h2>
+                <div class="form-holder">
+                    <input id="nome" type="text" class="input" placeholder="Nome" />
+                    <input id="cpf" type="number" class="input" placeholder="Cpf" />
+                    <input id="email" type="email" class="input" placeholder="E-mail" />
+                    <input id="telefone" type="number" class="input" placeholder="Telefone" />
+                    <input id="endereco" type="text" class="input" placeholder="Endereço" />
+                    <input id="complemento" type="text" class="input" placeholder="Complemento" />
+                </div>
+                <button class="submit-btn" type="button" (click)="cadastrar()">Cadastrar</button>
+            </form>
+            <div class="login-aviso" id="aviso-login" (click)="fecharAviso()">
+            </div>
+        </div>
+    </div>
+</div>

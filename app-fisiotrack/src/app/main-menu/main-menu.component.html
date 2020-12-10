@@ -3,20 +3,20 @@
 </div>
 <div id="exibirGrid">
     <ul>
-        <li (click)="toggleModal()">
+        <li (click)="toggleModal('patient')">
             Cadastre pacientes
         </li>
         <li (click)="toggleModal()">
-            Condutas inteligentes
+            Condutas fisioterapêuticas
         </li>
         <li (click)="toggleModal()">
-            Otimize seu tempo
+            Consultas
         </li>
         <li (click)="toggleModal()">
-            Acesse nossos tutoriais
+            Relatórios
         </li>
         <li (click)="toggleModal()">
-            Quem somos
+            Dados adicionais
         </li>
     </ul>
     <div>
@@ -29,7 +29,7 @@
                 <h3 style="text-align: center;">Para ter acesso as funcionalidades do site, é preciso se cadastrar
                 </h3>
                 <div style="text-align: center;">
-                    <button class="btn-ok" type="submit">Quero me cadastrar</button>
+                    <button class="btn-ok" type="submit" (click)="navegar()">Quero me cadastrar</button>
                     <button class="btn-cancel" type="button" (click)="toggleModal()">Não quero me cadastrar</button>
                 </div>
             </div>

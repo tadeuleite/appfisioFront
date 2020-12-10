@@ -1,27 +1,30 @@
 <div id="mySidenav" class="sidenav">
     <h1>Informações da conta</h1>
     <div class="foto-fisio"></div>
-    <h1>Bem-vindo!</h1>
-    <p>Faça seu login para acessar mais funcionalidades</p>
+    <h1 (click)="navegar('menu')">Bem-vindo!</h1>
+    <p *ngIf="!idUser">Faça seu login para acessar mais funcionalidades</p>
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <a (click)="navegar('cadastro-usuario')">Complete seu cadastro</a>
-    <a (click)="navegar('')">Guias e Tutoriais</a>
-    <a (click)="navegar('')">F.A.Q.</a>
-    <a (click)="navegar('')">Quem Somos Nós</a>
-    <a (click)="navegar('')">Desenvolvedores</a>
-    <a (click)="navegar('')">Ajuda</a>
-    <a (click)="navegar('')">Configurações</a>
-    <a (click)="navegar('')">Política de privacidade</a>
+    <a *ngIf="!idUser" (click)="navegar('signup')">Clique aqui para cadastrar ou logar</a>
+    <a (click)="navegar('guides')">Guias e Tutoriais</a>
+    <a (click)="navegar('faq')">F.A.Q.</a>
+    <a (click)="navegar('about')">Quem Somos Nós</a>
+    <a (click)="navegar('devs')">Desenvolvedores</a>
+    <a (click)="navegar('help')">Ajuda</a>
+    <a (click)="navegar('config')">Configurações</a>
+    <a (click)="navegar('policies')">Política de privacidade</a>
 </div>
 
 <div id="main">
     <span style="font-size:30px; cursor:pointer; top: 0; position: absolute;" (click)="openNav()">&#9776; </span>
 </div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
-
-<footer>
-    <p class="p-title">FisioTrack</p>
-    <p class="p-subtitle">Content filtering</p>
-    <p class="p-text">Set the content filtering level to restrict apps that can be downloaded</p>
-</footer>
+<div class="footer">
+    <footer>
+        <p class="p-title">FisioTrack</p>
+        <p class="p-subtitle">Content filtering</p>
+        <p class="p-text">Set the content filtering level to restrict apps that can be downloaded</p>
+    </footer>
+</div>
