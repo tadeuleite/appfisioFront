@@ -27,10 +27,10 @@ export class PatientComponent implements OnInit {
     }
 
     cadastrar() {
-        const nome = document.getElementById('nome').value;
-        const cpf = document.getElementById('cpf').value;
-        const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
+        const nome = (<HTMLInputElement>document.getElementById('nome')).value;
+        const cpf = (<HTMLInputElement>document.getElementById('cpf')).value;
+        const email = (<HTMLInputElement>document.getElementById('email')).value;
+        const telefone = (<HTMLInputElement>document.getElementById('telefone')).value;
 
         const data = JSON.stringify({
             nome: nome,

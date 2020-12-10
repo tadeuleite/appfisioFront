@@ -26,8 +26,8 @@ export class SignUpComponent implements OnInit {
     }
 
     logar() {
-        const login = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const login = (<HTMLInputElement>document.getElementById('email')).value;
+        const password = (<HTMLInputElement>document.getElementById('password')).value;
 
         const data = JSON.stringify({ email: login, senha: password });
 
@@ -61,8 +61,8 @@ export class SignUpComponent implements OnInit {
     }
 
     cadastrar() {
-        const login = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const login = (<HTMLInputElement>document.getElementById('email')).value;
+        const password = (<HTMLInputElement>document.getElementById('password')).value;
 
         const data = JSON.stringify({ email: login, senha: password });
 
