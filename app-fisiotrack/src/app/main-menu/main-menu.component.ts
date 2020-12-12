@@ -29,8 +29,8 @@ export class MainMenuComponent implements OnInit {
         }, 1000);
     }
 
-    navegar() {
-        this.route.navigate(['signup']);
+    navegar(rota: string, idUser?: number) {
+        this.route.navigate([rota, idUser]);
     }
 
     toggleModal(navecagao?) {
@@ -42,7 +42,7 @@ export class MainMenuComponent implements OnInit {
             window.addEventListener('click', this.windowOnClick);
             modal.classList.toggle('show-modal');
         } else {
-            this.route.navigate([navecagao, this.idUser]);
+            this.navegar(navecagao, this.idUser);
         }
     }
 

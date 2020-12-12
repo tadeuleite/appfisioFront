@@ -6,16 +6,16 @@
         <li (click)="toggleModal('patient')">
             Cadastre pacientes
         </li>
-        <li (click)="toggleModal()">
+        <li (click)="toggleModal('not-implemented-yet')">
             Condutas fisioterapêuticas
         </li>
-        <li (click)="toggleModal()">
+        <li (click)="toggleModal('not-implemented-yet')">
             Consultas
         </li>
-        <li (click)="toggleModal()">
+        <li (click)="toggleModal('not-implemented-yet')">
             Relatórios
         </li>
-        <li (click)="toggleModal()">
+        <li (click)="toggleModal('not-implemented-yet')">
             Dados adicionais
         </li>
     </ul>
@@ -29,7 +29,7 @@
                 <h3 style="text-align: center;">Para ter acesso as funcionalidades do site, é preciso se cadastrar
                 </h3>
                 <div style="text-align: center;">
-                    <button class="btn-ok" type="submit" (click)="navegar()">Quero me cadastrar</button>
+                    <button class="btn-ok" type="submit" (click)="navegar('signup')">Quero me cadastrar</button>
                     <button class="btn-cancel" type="button" (click)="toggleModal()">Não quero me cadastrar</button>
                 </div>
             </div>

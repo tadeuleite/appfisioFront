@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PatientComponent } from './patient/patient.component';
+import { NotImplementedComponent } from './not-implemented-yet/not-implemented.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PatientComponent } from './patient/patient.component';
     SidebarComponent,
     MainMenuComponent,
     SignUpComponent,
-    PatientComponent
+    PatientComponent,
+    NotImplementedComponent
   ],
   imports: [
     BrowserModule,

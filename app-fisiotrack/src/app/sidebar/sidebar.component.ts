@@ -40,6 +40,6 @@ export class SidebarComponent implements OnInit {
   }
 
   navegar(nomeRota) {
-    this.router.navigate([nomeRota, this.idUser]);
+    this.router.navigate([nomeRota, this.idUser ? this.idUser : '']);
   }
 }
