@@ -30,7 +30,12 @@ export class MainMenuComponent implements OnInit {
     }
 
     navegar(rota: string, idUser?: number) {
-        this.route.navigate([rota, idUser]);
+        if (idUser) {
+            this.route.navigate([rota, idUser]);
+        } else {
+            this.route.navigate([rota]);
+        }
+
     }
 
     toggleModal(navecagao?) {

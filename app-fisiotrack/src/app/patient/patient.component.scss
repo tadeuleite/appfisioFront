@@ -122,3 +122,8 @@ footer {
   position: fixed;
   width: 100%;
 }
+
+input:disabled{
+  color: black;
+  background-color: white;
+}

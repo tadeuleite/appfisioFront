@@ -60,7 +60,7 @@ export class SignUpComponent implements OnInit {
         xhr.send(data);
     }
 
-    cadastrar() {
+    cadastrar() { //cadastra login
         const login = (<HTMLInputElement>document.getElementById('email')).value;
         const password = (<HTMLInputElement>document.getElementById('password')).value;
 
@@ -72,6 +72,7 @@ export class SignUpComponent implements OnInit {
             const avisoLogin = document.getElementById('aviso-login');
             if (this.status !== 0) {
                 if (this.readyState === 4 && (this.status === 200 || this.status === 201)) {
+                    thisFora.cadastrarUser(JSON.parse(this.response).id);
                     avisoLogin.style.backgroundColor = 'green';
                     avisoLogin.style.display = 'block';
                     avisoLogin.innerHTML = 'Você se cadastrou com sucesso, redirecionando para página inicial';
@@ -87,6 +88,21 @@ export class SignUpComponent implements OnInit {
         });
 
         xhr.open('POST', 'http://localhost:8080/logins/');
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.send(data);
+    }
+
+    private cadastrarUser(id) { //cadastrar user
+        const login = (<HTMLInputElement>document.getElementById('email')).value;
+
+        const data = JSON.stringify({ id: id, nome: login });
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'http://localhost:8080/logins/perfil');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
         xhr.setRequestHeader('Content-Type', 'application/json');
